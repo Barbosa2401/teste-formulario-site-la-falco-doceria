@@ -307,6 +307,15 @@
                         </div>
                     </div>
 
+                    <div class="sabor-item" style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; max-width: 400px;">
+                        <label>Moranguinho</label>
+                        <div class="stepper">
+                            <button type="button" onclick="alterarQtd(this, -25)">-</button>
+                            <input type="number" name="qtd_beijinho" value="0" min="0" step="25" readonly style="width: 50px; text-align: center;">
+                            <button type="button" onclick="alterarQtd(this, 25)">+</button>
+                        </div>
+                    </div>
+
                 <fieldset>
                     <label for="image">Imagem de referência:</label><br>
                     <input id="image" type="file" accept="image/*" name="userImage" aria-describedby="imageHelp">
