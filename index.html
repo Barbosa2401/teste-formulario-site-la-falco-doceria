@@ -25,14 +25,10 @@
                 
                     <br>
 
-<<<<<<< HEAD
-                    <fieldset>
-=======
-                <fieldset>
-                
->>>>>>> 45d2c472422d2da8edaf87c31ae1a9e682f4f337
+                <fieldset id="section-bolos" class="product-section" style="display: none;">
+                    <legend>Bolos</legend>
 
-                        <legend>Bolos</legend>
+                    <fieldset>
                         <label for="name">Nome</label>
                         <input id="name" type="text" name="userName">
 
@@ -40,6 +36,7 @@
 
                         <label for="DeliveryDate">Data de Entrega</label>
                         <input id="DeliveryDate" type="date" name="userDeliveryDate">
+                    </fieldset>
 
                     <br>
 
@@ -216,9 +213,80 @@
                         </div>    
                     </fieldset>
 
-
-
+                    <fieldset>
+                        <p>Imagem de Referencia:</p>
+                        <label for="image">Upload de Foto</label>
+                        <input id="image" type="file" accept="image/*" name="userImage" aria-describedby="imageHelp">
+                        <small id="imageHelp">Envie uma foto no formato PNG ou JPEG</small>
                     </fieldset>
+                    
+
+                </fieldset>
+                
+                <!--Bento cake-->
+                <fieldset id="section-bentoCake" class="product-section" style="display: none;">
+                    <legend>Bento Cake</legend>
+                    <label>Frase/Desenho do topo:</label>
+                    <input type="text" name="bentoDescription">
+                </fieldset>
+
+                <!--Fatias-->
+                <fieldset id="section-fatias" class="product-section" style="display: none;">
+                    <legend>Fatias</legend>
+                    <label>Quantidade de fatias:</label>
+                    <input type="number" name="fatiasQty">
+                </fieldset>
+
+                <!--Kit Festa-->
+                <fieldset id="section-kitFesta" class="product-section" style="display: none;">
+                    <legend>Kit Festa</legend>
+                    <p>Selecione o tamanho do kit...</p>
+                </fieldset>
+
+                <!--Brigadeiros-->
+                <fieldset id="section-brigadeiros" class="product-section" style="display: none;">
+                    <legend>Brigadeiros</legend>
+                    <label>Sabores (mínimo 25 un por sabor):</label>
+                    <textarea name="brigadeiroFlavors"></textarea>
+                </fieldset>
+
+                <!--Brownies-->
+                <fieldset id="section-brownies" class="product-section" style="display: none;">
+                    <legend>Brownies</legend>
+                    <input type="checkbox" name="brownieRecheado"> Brownie Recheado?
+                </fieldset>
+
+                <!--Palhas Italianas-->
+                <fieldset id="section-palhasItalianas" class="product-section" style="display: none;">
+                    <legend>Palhas Italianas</legend>
+                    <label>Quantidade:</label>
+                    <input type="number" name="palhaQty">
+                </fieldset>
+
+                <script>
+                    const selectProdutos = document.getElementById('productOption');
+    
+                    selectProdutos.addEventListener('change', function() {
+                        // 1. Esconde todas as seções primeiro
+                        const secoes = document.querySelectorAll('.product-section');
+                        secoes.forEach(secao => {
+                            secao.style.display = 'none';
+                        });
+
+                        // 2. Pega o valor selecionado (ex: "bolos", "bentoCake")
+                        const valorSelecionado = this.value;
+
+                        // 3. Mostra a seção correspondente (se não for "notInformed")
+                        if (valorSelecionado !== 'notInformed') {
+                            const secaoParaMostrar = document.getElementById('section-' + valorSelecionado);
+                            if (secaoParaMostrar) {
+                                secaoParaMostrar.style.display = 'block';
+                            }
+                        }
+                    });
+                </script>
+
+
             </fieldset>
 
             <button type="submit" aria-label="Enviar dados do formalário">Enviar</button>
