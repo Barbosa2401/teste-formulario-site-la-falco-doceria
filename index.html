@@ -24,7 +24,8 @@
                 </select>
                 
                     <br>
-
+                    
+                <!--Bolos-->
                 <fieldset id="section-bolos" class="product-section" style="display: none;">
                     <legend>Bolos</legend>
 
@@ -285,9 +286,35 @@
 
                 <!--Brigadeiros-->
                 <fieldset id="section-brigadeiros" class="product-section" style="display: none;">
-                    <legend>Brigadeiros</legend>
-                    <label>Sabores (mínimo 25 un por sabor):</label>
-                    <textarea name="brigadeiroFlavors"></textarea>
+                    <legend>Escolha seus Brigadeiros</legend>
+                    <p><small>Mínimo de 25 unidades por sabor</small></p>
+
+                    <div class="sabor-item" style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; max-width: 400px;">
+                        <label>Brigadeiro Tradicional</label>
+                        <div class="stepper">
+                            <button type="button" onclick="alterarQtd(this, -25)">-</button>
+                            <input type="number" name="qtd_tradicional" value="0" min="0" step="25" readonly style="width: 50px; text-align: center;">
+                            <button type="button" onclick="alterarQtd(this, 25)">+</button>
+                        </div>
+                    </div>
+
+                    <div class="sabor-item" style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; max-width: 400px;">
+                        <label>Leite Ninho</label>
+                        <div class="stepper">
+                            <button type="button" onclick="alterarQtd(this, -25)">-</button>
+                            <input type="number" name="qtd_beijinho" value="0" min="0" step="25" readonly style="width: 50px; text-align: center;">
+                            <button type="button" onclick="alterarQtd(this, 25)">+</button>
+                        </div>
+                    </div>
+
+                    <div class="sabor-item" style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; max-width: 400px;">
+                        <label>Moranguinho</label>
+                        <div class="stepper">
+                            <button type="button" onclick="alterarQtd(this, -25)">-</button>
+                            <input type="number" name="qtd_beijinho" value="0" min="0" step="25" readonly style="width: 50px; text-align: center;">
+                            <button type="button" onclick="alterarQtd(this, 25)">+</button>
+                        </div>
+                    </div>
 
                 <fieldset>
                     <label for="image">Imagem de referência:</label><br>
@@ -339,6 +366,7 @@
 
                 </fieldset>
 
+                <!--Funções javascript-->
                 <script>
                     const selectProdutos = document.getElementById('productOption');
     
@@ -360,8 +388,21 @@
                             }
                         }
                     });
-                </script>
 
+                    function alterarQtd(botao, valor) {
+                        // Encontra o campo de input que está ao lado do botão clicado
+                        const input = botao.parentNode.querySelector('input');
+                        let atual = parseInt(input.value);
+    
+                        // Calcula o novo valor
+                        let novoValor = atual + valor;
+    
+                        // Garante que não seja menor que zero
+                        if (novoValor < 0) novoValor = 0;
+    
+                        input.value = novoValor;
+                    }
+                </script>
 
             </fieldset>
 
