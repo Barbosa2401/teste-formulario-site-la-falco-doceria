@@ -37,7 +37,13 @@
 
                         <label for="DeliveryDate">Data de Entrega</label>
                         <input id="DeliveryDate" type="date" name="userDeliveryDate">
-                    </fieldset>
+
+                     <br>
+
+                        <label for="DeliveryTime">Horário de Retirada</label>
+                        <input id="DeliveryTime" type="time" name="userDeliveryTime">
+                        
+                    </fieldset>    
 
                     <br>
 
@@ -233,6 +239,22 @@
                     <legend>Bento Cake</legend>
                     <label>Frase/Desenho do topo:</label>
                     <input type="text" name="bentoDescription">
+                    
+                <fieldset>
+                        <label for="name">Nome</label>
+                        <input id="name" type="text" name="userName">
+
+                    <br>
+
+                        <label for="DeliveryDate">Data de Entrega</label>
+                        <input id="DeliveryDate" type="date" name="userDeliveryDate">
+
+                     <br>
+
+                        <label for="DeliveryTime">Horário de Retirada</label>
+                        <input id="DeliveryTime" type="time" name="userDeliveryTime">
+                        
+                </fieldset>
 
                 <fieldset>
                     <label for="image">Imagem de referência:</label><br>
@@ -254,6 +276,22 @@
                     <input type="number" name="fatiasQty">
 
                 <fieldset>
+                        <label for="name">Nome</label>
+                        <input id="name" type="text" name="userName">
+
+                    <br>
+
+                        <label for="DeliveryDate">Data de Entrega</label>
+                        <input id="DeliveryDate" type="date" name="userDeliveryDate">
+
+                     <br>
+
+                        <label for="DeliveryTime">Horário de Retirada</label>
+                        <input id="DeliveryTime" type="time" name="userDeliveryTime">
+                        
+                </fieldset>
+
+                <fieldset>
                     <label for="image">Imagem de referência:</label><br>
                     <input id="image" type="file" accept="image/*" name="userImage" aria-describedby="imageHelp">
                     <small id="imageHelp">Envie uma foto no formato PNG ou JPEG</small>
@@ -272,6 +310,22 @@
                     <p>Selecione o tamanho do kit...</p>
 
                 <fieldset>
+                        <label for="name">Nome</label>
+                        <input id="name" type="text" name="userName">
+
+                    <br>
+
+                        <label for="DeliveryDate">Data de Entrega</label>
+                        <input id="DeliveryDate" type="date" name="userDeliveryDate">
+
+                     <br>
+
+                        <label for="DeliveryTime">Horário de Retirada</label>
+                        <input id="DeliveryTime" type="time" name="userDeliveryTime">
+                        
+                </fieldset>
+
+                <fieldset>
                     <label for="image">Imagem de referência:</label><br>
                     <input id="image" type="file" accept="image/*" name="userImage" aria-describedby="imageHelp">
                     <small id="imageHelp">Envie uma foto no formato PNG ou JPEG</small>
@@ -288,6 +342,22 @@
                 <fieldset id="section-brigadeiros" class="product-section" style="display: none;">
                     <legend>Escolha seus Brigadeiros</legend>
                     <p><small>Mínimo de 25 unidades por sabor</small></p>
+
+                <fieldset>
+                        <label for="name">Nome</label>
+                        <input id="name" type="text" name="userName">
+
+                    <br>
+
+                        <label for="DeliveryDate">Data de Entrega</label>
+                        <input id="DeliveryDate" type="date" name="userDeliveryDate">
+
+                     <br>
+
+                        <label for="DeliveryTime">Horário de Retirada</label>
+                        <input id="DeliveryTime" type="time" name="userDeliveryTime">
+                        
+                </fieldset>
 
                     <div class="sabor-item" style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; max-width: 400px;">
                         <label>Brigadeiro Tradicional</label>
@@ -344,6 +414,22 @@
                     <input type="checkbox" name="brownieRecheado"> Brownie Recheado?
 
                 <fieldset>
+                        <label for="name">Nome</label>
+                        <input id="name" type="text" name="userName">
+
+                    <br>
+
+                        <label for="DeliveryDate">Data de Entrega</label>
+                        <input id="DeliveryDate" type="date" name="userDeliveryDate">
+
+                     <br>
+
+                        <label for="DeliveryTime">Horário de Retirada</label>
+                        <input id="DeliveryTime" type="time" name="userDeliveryTime">
+                        
+                </fieldset>
+
+                <fieldset>
                     <label for="image">Imagem de referência:</label><br>
                     <input id="image" type="file" accept="image/*" name="userImage" aria-describedby="imageHelp">
                     <small id="imageHelp">Envie uma foto no formato PNG ou JPEG</small>
@@ -361,6 +447,22 @@
                     <legend>Palhas Italianas</legend>
                     <label>Quantidade:</label>
                     <input type="number" name="palhaQty">
+
+                <fieldset>
+                        <label for="name">Nome</label>
+                        <input id="name" type="text" name="userName">
+
+                    <br>
+
+                        <label for="DeliveryDate">Data de Entrega</label>
+                        <input id="DeliveryDate" type="date" name="userDeliveryDate">
+
+                     <br>
+
+                        <label for="DeliveryTime">Horário de Retirada</label>
+                        <input id="DeliveryTime" type="time" name="userDeliveryTime">
+                        
+                </fieldset>
 
                 <fieldset>
                     <label for="image">Imagem de referência:</label><br>
@@ -411,11 +513,89 @@
     
                         input.value = novoValor;
                     }
+
+                    function enviarParaWhatsApp() {
+                        // 1. CONFIGURAÇÃO: Coloque seu número aqui (Ex: 5511999999999)
+                        const telefone = "5519997553457"; 
+    
+                        // 2. COLETA DOS DADOS BÁSICOS
+                        const nome = document.getElementById('name').value;
+                        const data = document.getElementById('DeliveryDate').value;
+                        const horario = document.getElementById('DeliveryTime').value;
+                        const produtoChave = document.getElementById('productOption').value;
+    
+                        // Validação simples
+                        if (produtoChave === 'notInformed' || !nome || !data || !horario) {
+                            alert("Por favor, preencha Nome, Data, Horário e escolha um Produto.");
+                            return;
+                        }
+
+                        // Mapeamento para o nome do produto ficar bonito na mensagem
+                        const nomesProdutos = {
+                            'bolos': 'Bolos',
+                            'bentoCake': 'Bento Cake',
+                            'fatias': 'Fatias',
+                            'kitFesta': 'Kit Festa',
+                            'brigadeiros': 'Brigadeiros',
+                            'brownies': 'Brownies',
+                            'palhasItalianas': 'Palhas Italianas'
+                        };
+
+                        // 3. ESTRUTURA DO CABEÇALHO (Conforme você solicitou)
+                        let mensagem = `*Nova Encomenda*\n\n`;
+                        mensagem += `*Cliente:* ${nome}\n`;
+                        mensagem += `*Data da Entrega:* ${data}\n`;
+                        mensagem += `*Horário de retirada:* ${horario}\n`;
+                        mensagem += `*Produto:* ${nomesProdutos[produtoChave]}\n\n`;
+                        mensagem += `*DETALHES DA OPÇÃO SELECIONADA:*\n`;
+
+                        // 4. CAPTURA APENAS O QUE FOI PREENCHIDO NA SEÇÃO ATIVA
+                        const secaoAtiva = document.getElementById('section-' + produtoChave);
+                        const inputs = secaoAtiva.querySelectorAll('input, select, textarea');
+
+                        inputs.forEach(input => {
+                            // --- ADICIONE ESTA LINHA PARA EVITAR REPETIÇÃO ---
+                            // Se o ID do campo for um dos dados básicos, ele pula para o próximo
+                            if (['name', 'DeliveryDate', 'DeliveryTime'].includes(input.id)) return;
+
+                            let rotulo = "";
+                            const labelElement = document.querySelector(`label[for="${input.id}"]`);
+        
+                            if (labelElement) {
+                                rotulo = labelElement.innerText.split('|')[0].trim();
+                            } else {
+                                rotulo = input.name; 
+                            }
+
+                            if (input.type === 'checkbox' || input.type === 'radio') {
+                                if (input.checked) {
+                                    mensagem += `✅ ${rotulo}\n`;
+                                }
+                            } else if (input.value && input.value !== "0" && input.value !== "") {
+                                mensagem += `▪️ ${rotulo}: ${input.value}\n`;
+                            }
+                        });
+
+                        // 5. FINALIZAÇÃO E ENVIO
+                        // O encodeURIComponent é essencial para transformar espaços e quebras de linha em um link válido
+                        const mensagemFinal = encodeURIComponent(mensagem);
+    
+                        // Usamos o formato wa.me que é o link curto oficial do WhatsApp
+                        const url = `https://wa.me/${telefone}?text=${mensagemFinal}`;
+
+                        // Tenta abrir em uma nova aba
+                        const win = window.open(url, '_blank');
+    
+                        // Caso o navegador bloqueie o pop-up, ele abre na mesma aba como plano B
+                        if (!win) {
+                            window.location.href = url;
+                        }
+                    }
                 </script>
 
             </fieldset>
 
-            <button type="submit" aria-label="Enviar dados do formalário">Enviar</button>
+            <button type="button" onclick="enviarParaWhatsApp()" aria-label="Enviar para WhatsApp">Enviar para WhatsApp</button>
             <button type="reset" aria-label="limpar dados do formalário">Limpar</button>
             </form>
         </section> 
